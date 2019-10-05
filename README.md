@@ -1,2 +1,2 @@
-# 2019-2-Track-Frontend-E-Grigoryan
+# 2019-2-Atom-Frontend-E-Grigoryan
 Учебный проект
