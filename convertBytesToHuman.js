@@ -12,9 +12,7 @@
  * и класса (например, отрицательные числа)
  */
 
-export default
-
-function convertBytesToHuman(bytes) {
+export default function convertBytesToHuman(bytes) {
   // your solution goes here
   let names = ["B", "Kb", "Mb", "Gb", "Tb", "Pb"]
   let size = []

@@ -24,9 +24,7 @@ nonUniqueElements([5, 5, 5, 5, 5]) == [5, 5, 5, 5, 5]
 nonUniqueElements([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
  */
 
-export default
-
-function nonUniqueElements(data) {
+export default function nonUniqueElements(data) {
   // your solution goes here
   let dict = {}
   for (let i = 0; i < data.length; ++i)
