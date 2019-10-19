@@ -71,23 +71,18 @@ class MessageForm extends HTMLElement {
     event.preventDefault();
     if (this.$input.value.length > 0) {
       const timeMes = this.getTimeStr();
-      const key = this.getKey();
-      const $message = this._createMessage('EG', this.$input.value, timeMes, key);
-      this.$messages.appendChild($message);
+      this._createMessage('EG', this.$input.value, timeMes);
       const messageObj = {
         name: 'EG',
         data: this.$input.value,
         time: timeMes,
       };
-      localStorage.setItem(key, JSON.stringify(messageObj));
+      const messageBuf = JSON.parse(localStorage.getItem('message_1'));
+      messageBuf.push(messageObj);
+      localStorage.setItem('message_1', JSON.stringify(messageBuf));
       // Очистил ввод
       this.$input.setAttribute('value', '');
     }
-  }
-
-  getKey() {
-    const time = new Date();
-    return time.getTime();
   }
 
   getTimeStr() {
@@ -95,25 +90,24 @@ class MessageForm extends HTMLElement {
     return `${time.getHours()}:${time.getMinutes()}`;
   }
 
-  _createMessage(name, data, timeMes, messageId) {
+  _createMessage(name, data, timeMes) {
     const messageBuffer = document.createElement('message-one');
-    messageBuffer.setAttribute('messageId', messageId);
     messageBuffer.setAttribute('time', timeMes);
     messageBuffer.setAttribute('data', data);
     messageBuffer.setAttribute('name', 'EG');
-    return messageBuffer;
+    this.$messages.appendChild(messageBuffer);
   }
 
   connectedCallback() {
-    const keyBuffer = Object.keys(localStorage).sort();
-    keyBuffer.forEach((key) => {
-        if (key) {
-            const msgObj = JSON.parse(localStorage.getItem(key));
-            const $message = this._createMessage(msgObj.name, msgObj.data, msgObj.time, key);
-            this.$messages.appendChild($message);
-          }
-    });
-  }
+    const messageArray = JSON.parse(localStorage.getItem('message_1'));
+    if (messageArray) {
+      messageArray.forEach((item) => {
+        this._createMessage(item.name, item.data, item.time);
+      });
+      return;
+    }
+    localStorage.setItem('message_1', JSON.stringify([]));
+    }
 
   _onKeyPress(event) {
     if (event.keyCode === 13) {

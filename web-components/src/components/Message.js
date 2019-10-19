@@ -48,7 +48,7 @@ class MessageOne extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['name', 'data', 'massageId', 'time'];
+    return ['name', 'data', 'time'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -61,9 +61,6 @@ class MessageOne extends HTMLElement {
         break;
       case 'time':
         this.$time.innerHTML = newValue;
-        break;
-      case 'messageId':
-        this.$messageId.innerHTML = newValue;
         break;
       default:
         break;
