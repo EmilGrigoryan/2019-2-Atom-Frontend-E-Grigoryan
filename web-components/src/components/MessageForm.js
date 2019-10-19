@@ -107,7 +107,7 @@ class MessageForm extends HTMLElement {
       return;
     }
     localStorage.setItem('message_1', JSON.stringify([]));
-    }
+  }
 
   _onKeyPress(event) {
     if (event.keyCode === 13) {
