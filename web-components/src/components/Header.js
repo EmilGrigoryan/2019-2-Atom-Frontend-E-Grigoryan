@@ -28,6 +28,14 @@ template.innerHTML = `
       background-repeat: no-repeat;
       align-items: center;
   }
+
+  .backbutton:hover{
+    opacity: 0.7;
+  }
+
+  .backbutton:active{
+    opacity: 0.3;
+}
   .wrap .search {
     height: 35px;
     width: 35px;
@@ -37,7 +45,13 @@ template.innerHTML = `
     background-repeat: no-repeat;
     align-items: center;
 }
-    
+.search:hover{
+  opacity: 0.7;
+}
+
+.search:active{
+  opacity: 0.3;
+}
     
 </style>
     <div class='wrap'> 
