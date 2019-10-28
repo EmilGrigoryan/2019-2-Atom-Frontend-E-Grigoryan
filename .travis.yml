@@ -19,3 +19,4 @@ deploy:
     branch:
       - master
       - devel
+      - devel_new
