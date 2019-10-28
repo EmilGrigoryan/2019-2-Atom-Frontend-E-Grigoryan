@@ -35,7 +35,8 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "dependencies": {
-    "react-hot-loader": "^4.12.15"
+    "react-hot-loader": "^4.12.15",
+    "copy-webpack-plugin": "^5.0.4"
   },
   "keywords": [],
   "author": "",
