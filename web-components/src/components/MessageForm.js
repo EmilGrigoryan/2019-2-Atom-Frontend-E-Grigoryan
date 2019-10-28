@@ -1,7 +1,12 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
-        
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }    
+
         :host {
             width: 100%;
             height: 100%;
@@ -36,9 +41,7 @@ template.innerHTML = `
         }
 
         
-        input[type=submit] {
-            visibility: visible;
-        }
+      
     </style>
     
         <div class='header'>
