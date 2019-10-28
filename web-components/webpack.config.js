@@ -64,6 +64,6 @@ module.exports = {
       filename: 'index.html',
       template: './index.html',
     }),
- 	new CopyWebpackPlugin([{ from: 'images/', to: 'images/' }]),
+    new CopyWebpackPlugin([{ from: 'images/', to: 'images/' }]),
   ],
 };
