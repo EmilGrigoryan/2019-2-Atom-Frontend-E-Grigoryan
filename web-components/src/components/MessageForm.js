@@ -34,6 +34,7 @@ template.innerHTML = `
         ::-webkit-scrollbar{
             width: 0px;
         }
+
         
         input[type=submit] {
             visibility: visible;
@@ -49,7 +50,6 @@ template.innerHTML = `
         </div>
     </div>
     <form>
-        <div class="result"></div>
         <form-input name="message-text" placeholder="Write a message.."></form-input>
     </form>
 `;
@@ -63,11 +63,12 @@ class MessageForm extends HTMLElement {
     this.$form = this._shadowRoot.querySelector('form');
     this.$input = this._shadowRoot.querySelector('form-input');
     this.$messages = this._shadowRoot.querySelector('.messages');
-    this.$form.addEventListener('submit', this._onSendingMessage.bind(this));
+    this.$header = this._shadowRoot.querySelector('header-mess');
+    this.$form.addEventListener('submit', this.onSubmit.bind(this));
     this.$form.addEventListener('keypress', this._onKeyPress.bind(this));
   }
 
-  _onSendingMessage(event) {
+  onSubmit(event) {
     event.preventDefault();
     if (this.$input.value.length > 0) {
       const timeMes = this.getTimeStr();
@@ -77,13 +78,23 @@ class MessageForm extends HTMLElement {
         data: this.$input.value,
         time: timeMes,
       };
-      const messageBuf = JSON.parse(localStorage.getItem('message_1'));
-      messageBuf.push(messageObj);
-      localStorage.setItem('message_1', JSON.stringify(messageBuf));
-      // Очистил ввод
+      const messageBuf = JSON.parse(localStorage.getItem(this.$dialogid));
+      messageBuf[1].push(messageObj);
+      localStorage.setItem(this.$dialogid, JSON.stringify(messageBuf));
       this.$input.setAttribute('value', '');
     }
+    this.dispatchEvent(new Event('onSubmit'));
   }
+
+
+  static get observedAttributes() {
+    return ['dialogid'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    this.$dialogid = newValue;
+  }
+
 
   getTimeStr() {
     const time = new Date();
@@ -98,15 +109,17 @@ class MessageForm extends HTMLElement {
     this.$messages.appendChild(messageBuffer);
   }
 
-  connectedCallback() {
-    const messageArray = JSON.parse(localStorage.getItem('message_1'));
-    if (messageArray) {
-      messageArray.forEach((item) => {
+  loadMessages() {
+    const messageArray = JSON.parse(localStorage.getItem(this.$dialogid));
+    this.$header.$name.innerText = messageArray[0].Name;
+    if (messageArray[1]) {
+      this.$messages.innerHTML = '';
+      messageArray[1].forEach((item) => {
         this._createMessage(item.name, item.data, item.time);
       });
       return;
     }
-    localStorage.setItem('message_1', JSON.stringify([]));
+    localStorage.setItem(this.$dialogid, JSON.stringify([]));
   }
 
   _onKeyPress(event) {
