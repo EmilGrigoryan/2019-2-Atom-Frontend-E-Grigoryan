@@ -9,7 +9,7 @@ template.innerHTML = `
             display: flex;
             flex-direction: column;
         }
-        .header{
+        .header {
             width: 100%;
             background-color: #29384B;
             z-index: 1;
@@ -22,13 +22,28 @@ template.innerHTML = `
             align-content: flex-end;
             overflow-y: auto;
         }
-        
-        .messages{
+
+      
+        .messages {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
             align-content: flex-end;
             flex-direction: column;
+        }
+
+        message-one.newmessage {
+          animation-name: newmessageOp;
+          animation-duration: 0.7s;
+        }
+
+        @keyframes newmessageOp {
+          0%{
+            opacity: 0;
+          }
+          100%{
+            opacity: 1;
+          }
         }
 
         ::-webkit-scrollbar{
@@ -103,6 +118,7 @@ class MessageForm extends HTMLElement {
 
   _createMessage(name, data, timeMes) {
     const messageBuffer = document.createElement('message-one');
+    messageBuffer.classList.add('newmessage');
     messageBuffer.setAttribute('time', timeMes);
     messageBuffer.setAttribute('data', data);
     messageBuffer.setAttribute('name', 'EG');

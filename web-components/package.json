@@ -31,12 +31,12 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
   },
-  "name": "web-components",
-  "version": "1.0.0",
-  "main": "webpack.config.js",
   "dependencies": {
     "react-hot-loader": "^4.12.15",
-    "copy-webpack-plugin": "^5.0.4"
+    "copy-webpack-plugin": "^5.0.4",
+    "name": "web-components",
+    "version": "1.0.0",
+    "main": "webpack.config.js"
   },
   "keywords": [],
   "author": "",
