@@ -18,4 +18,4 @@ deploy:
   on:
     branch:
       - master
-      - devel
+      - devel_new
