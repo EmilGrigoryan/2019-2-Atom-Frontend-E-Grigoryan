@@ -22,11 +22,13 @@ template.innerHTML = `
             margin: 8px 15px;
             background: url(https://image.flaticon.com/icons/svg/116/116312.svg);
             background-repeat: no-repeat;
+
         }
 
     </style>
-    <div class='pin'></div>
-    <input type="text">
+      <div class='pin'></div>
+      <input type="text" style="color:#ffffff">
+
 `;
 
 class FormInput extends HTMLElement {
@@ -34,9 +36,9 @@ class FormInput extends HTMLElement {
     super();
     this._shadowRoot = this.attachShadow({ mode: 'open' });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
-
     this.$input = this.shadowRoot.querySelector('input');
   }
+
 
   static get observedAttributes() {
     return ['name', 'value', 'placeholder', 'disabled'];

@@ -5,7 +5,8 @@ module.exports = {
         "prefer-template": 1,
         "no-plusplus": 1,
         "no-case-declarations": 1,
+	"consistent-return" : 0,
 	"no-underscore-dangle": 0,
-	"class-methods-use-this": 0
+	"class-methods-use-this": 0,
     },
 };
