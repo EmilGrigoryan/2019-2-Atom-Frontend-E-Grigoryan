@@ -12,6 +12,7 @@ template.innerHTML = `
         background-color: #1D2234;
     }
 
+    
     .wrap message-form{
       position: absolute;
       z-index: 0;
@@ -24,13 +25,8 @@ template.innerHTML = `
         align-content: flex-start;
         overflow-y: auto
     }
-    ::-webkit-scrollbar{
-        width: 0px;
-    }
+
     
-    input[type=submit] {
-        visibility: visible;
-    }
 
     .dialogs {
         width: 100%;
@@ -46,9 +42,27 @@ template.innerHTML = `
         right: 30px;
         width: 60px;
         height: 60px;
-        opacity: 0.6;
-        background-color: #61A0C4;
+        opacity: 0.3;
+        background-color: #0B4C5F;
         border-radius: 30px;
+        animation-duration: 3s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+        animation-name: forButton;
+    }
+
+
+
+    @keyframes forButton {
+      from {
+        box-shadow: 0 0 0 0 rgba(0,0,54.51, 0.9);
+      }
+      50% {
+          box-shadow: 0 0 0 25px rgba(0,0,54.51,0.5);
+      }
+      to {
+          box-shadow: 0 0 0 0px rgba(0,0,54.51,0.9);
+      }
     }
     .buttonNew:hover {
         opacity: 1.0;
@@ -62,18 +76,42 @@ template.innerHTML = `
 
     message-form {
       display: none;
+      right: -100%;
+      animation-duration: 0.3s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
     }
     message-form.apear {
       z-index: 1;
       display: flex;
+      animation-name: apear;
     }
     
     message-form.disapear{
       display: none;
-      
+      animation-name: disapear;
     }
 
+    @keyframes disapear{
+      from{
+        right: 0;
       }
+      to{
+        right: -100%;
+      }
+    }
+
+    @keyframes apear{
+      from{
+        right: -100%;
+      }
+      to{
+        right: 0;
+      }
+    }
+  
+
+
 
 </style>
 <div class='wrap'>

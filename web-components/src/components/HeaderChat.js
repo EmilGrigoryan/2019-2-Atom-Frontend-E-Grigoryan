@@ -20,6 +20,16 @@ template.innerHTML = `
     align-items: center;
 }
 
+.burger:hover{
+    opacity: 0.7;
+  }
+  
+.burger:active{
+    opacity: 0.3;
+}
+
+
+
 .wrap .data {
     display: flex;
     flex-direction: column;
@@ -39,6 +49,13 @@ template.innerHTML = `
     align-items: center;
 }
 
+.search:hover{
+    opacity: 0.7;
+  }
+  
+.search:active{
+    opacity: 0.3;
+}
 
 </style>
 <div class='wrap'>
