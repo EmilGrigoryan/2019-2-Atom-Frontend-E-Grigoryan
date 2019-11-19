@@ -1,0 +1,83 @@
+.wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  flex: auto;
+  align-content: flex-start;
+  overflow-y: auto;
+  background-color: #1d2234;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 45px;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.dialogs {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 0;
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+}
+
+@keyframes disappear {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -100%;
+  }
+}
+
+.buttonNew {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  opacity: 0.3;
+  background-color: #0b4c5f;
+  border-radius: 30px;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-name: forButton;
+}
+
+@keyframes forButton {
+  from {
+    box-shadow: 0 0 0 0 rgba(0, 0, 54.51, 0.9);
+  }
+
+  50% {
+    box-shadow: 0 0 0 25px rgba(0, 0, 54.51, 0.5);
+  }
+
+  to {
+    box-shadow: 0 0 0 0px rgba(0, 0, 54.51, 0.9);
+  }
+}
+
+.buttonNew:hover {
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes appear {
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 0;
+  }
+}

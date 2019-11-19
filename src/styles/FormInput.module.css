@@ -1,0 +1,29 @@
+.wrap {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  background-color: #2e3242;
+}
+
+.inputText {
+  width: 100%;
+}
+
+input {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: #fff;
+}
+
+.pin {
+  height: 28px;
+  width: 30px;
+  margin: 8px 15px;
+  background: url(https://image.flaticon.com/icons/svg/116/116312.svg);
+  background-repeat: no-repeat;
+}

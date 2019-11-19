@@ -1,0 +1,47 @@
+.wrap {
+  width: 100%;
+  height: 100vh;
+  background-color: #1d2234;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  right: -100%;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.formInput {
+  width: 100%;
+  background-color: #f7f8fa;
+  z-index: 1;
+}
+
+.dialog {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  flex: auto;
+  align-content: flex-end;
+  overflow-y: auto;
+}
+
+.messages {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  background-color: #29384b;
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
