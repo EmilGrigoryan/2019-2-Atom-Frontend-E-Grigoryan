@@ -1,3 +1,4 @@
+localStorage.clear()
 if (localStorage.getItem('DialogIDs') === null) {
   localStorage.setItem('DialogIDs', JSON.stringify([0, 1]))
   localStorage.setItem(
