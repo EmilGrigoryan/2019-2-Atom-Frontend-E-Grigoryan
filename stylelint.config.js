@@ -6,7 +6,10 @@ module.exports = {
   plugins: ['stylelint-no-unsupported-browser-features', 'stylelint-a11y'],
 
   rules: {
+    'max-line-length': null,
+    'value-list-comma-newline-after': null,
     'color-format/format': null,
+    'declaration-colon-newline-after': null,
     'scale-unlimited/declaration-strict-value': null,
     'plugin/no-low-performance-animation-properties': null,
     'a11y/media-prefers-reduced-motion': null,
