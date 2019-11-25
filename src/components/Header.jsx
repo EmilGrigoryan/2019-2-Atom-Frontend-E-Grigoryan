@@ -1,14 +1,18 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import styles from '../styles/Header.module.css'
 
 export function Header(props) {
   return (
     <div className={styles.wrap}>
-      <div onClick={props.closeChat.bind(this)} className={styles.backbutton}></div>
+      <Link to="/">
+        <div className={styles.backbutton}></div>
+      </Link>
       <div className={styles.data}>
-        <div className={styles.name}> {props.name} </div>
-        <div className={styles.online}>last seen recently</div>
+        <Link to={`/profile/`} style={{ textDecoration: 'none', color: 'unset' }}>
+          <div className={styles.name}> {props.name} </div>
+        </Link>
+        <div className={styles.online}>{props.status}</div>
       </div>
       <div className={styles.search}></div>
     </div>

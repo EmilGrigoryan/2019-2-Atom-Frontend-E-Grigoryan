@@ -1,4 +1,4 @@
-localStorage.clear()
+// localStorage.clear()
 if (localStorage.getItem('DialogIDs') === null) {
   localStorage.setItem('DialogIDs', JSON.stringify([0, 1]))
   localStorage.setItem(
@@ -15,5 +15,13 @@ if (localStorage.getItem('DialogIDs') === null) {
       { name: 'Эмиль Григорян', time: '0:58', data: 'Сообщение от Emil' },
       [{ name: 'Эмиль Григорян', data: 'Сообщение от Emil', time: '0:58' }],
     ]),
+  )
+
+  localStorage.setItem(
+    'Users',
+    JSON.stringify({
+      'Эмиль Григорян': { userName: 'emil__grig', about: 'Разработчик приложения' },
+      'Дженнифер Эшли': { userName: 'DAshley', about: 'Выдуманный персонаж' },
+    }),
   )
 }

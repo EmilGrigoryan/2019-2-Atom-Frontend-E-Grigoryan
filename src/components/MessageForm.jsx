@@ -54,7 +54,7 @@ export class MessageForm extends React.Component {
     return (
       <div style={this.props.style} className={styles.wrap}>
         <div className={styles.header}>
-          <Header closeChat={this.props.closeChat.bind(this)} name={this.props.name} />
+          <Header name={this.props.name} status={'last seen recently'} />
         </div>
         <div className={styles.dialog}>
           <div className={styles.messages}>{this.state.messages}</div>

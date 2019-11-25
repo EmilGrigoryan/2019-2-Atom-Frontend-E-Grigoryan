@@ -28,16 +28,6 @@
   flex-direction: column;
 }
 
-@keyframes disappear {
-  from {
-    right: 0;
-  }
-
-  to {
-    right: -100%;
-  }
-}
-
 .buttonNew {
   position: absolute;
   bottom: 30px;
@@ -79,5 +69,15 @@
 
   to {
     right: 0;
+  }
+}
+
+@keyframes disappear {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -100%;
   }
 }
