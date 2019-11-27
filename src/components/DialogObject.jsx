@@ -1,12 +1,18 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import styles from '../styles/DialogObject.module.css'
 
 export function DialogObject(props) {
   return (
-    <div onClick={props.openChat.bind(undefined, props.id)} className={styles.wrap}>
-      <div className={styles.avatar}></div>
-      <div className={styles.InformationBlock}>
+    <div className={styles.wrap}>
+      <Link to={`/profile/`} style={{ textDecoration: 'none', color: 'unset' }}>
+        <div className={styles.avatar}></div>
+      </Link>
+      <Link
+        to={`/chat/${props.chat_id}`}
+        className={styles.InformationBlock}
+        style={{ textDecoration: 'none', color: 'unset' }}
+      >
         <div className={styles.PersonalInformation}>
           <div className={styles.name}>
             <p>{props.chat.name}</p>
@@ -21,7 +27,7 @@ export function DialogObject(props) {
           </div>
           <div className={styles.status}></div>
         </div>
-      </div>
+      </Link>
     </div>
   )
 }

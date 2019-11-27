@@ -13,6 +13,7 @@ module.exports = {
     'scale-unlimited/declaration-strict-value': null,
     'plugin/no-low-performance-animation-properties': null,
     'a11y/media-prefers-reduced-motion': null,
+    'property-no-vendor-prefix': null,
     indentation: null,
     'function-url-quotes': null,
     'a11y/selector-pseudo-class-focus': null,
