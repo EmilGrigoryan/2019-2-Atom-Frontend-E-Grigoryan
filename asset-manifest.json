@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/2019-2-Atom-Frontend-E-Grigoryan/static/css/main.d2f02564.chunk.css",
+    "main.js": "/2019-2-Atom-Frontend-E-Grigoryan/static/js/main.54e1b436.chunk.js",
+    "main.js.map": "/2019-2-Atom-Frontend-E-Grigoryan/static/js/main.54e1b436.chunk.js.map",
+    "runtime-main.js": "/2019-2-Atom-Frontend-E-Grigoryan/static/js/runtime-main.eeeec341.js",
+    "runtime-main.js.map": "/2019-2-Atom-Frontend-E-Grigoryan/static/js/runtime-main.eeeec341.js.map",
+    "static/js/2.5deaa54e.chunk.js": "/2019-2-Atom-Frontend-E-Grigoryan/static/js/2.5deaa54e.chunk.js",
+    "static/js/2.5deaa54e.chunk.js.map": "/2019-2-Atom-Frontend-E-Grigoryan/static/js/2.5deaa54e.chunk.js.map",
+    "index.html": "/2019-2-Atom-Frontend-E-Grigoryan/index.html",
+    "precache-manifest.f758fbb6c2746eb51e7bde2fa9b1c570.js": "/2019-2-Atom-Frontend-E-Grigoryan/precache-manifest.f758fbb6c2746eb51e7bde2fa9b1c570.js",
+    "service-worker.js": "/2019-2-Atom-Frontend-E-Grigoryan/service-worker.js",
+    "static/css/main.d2f02564.chunk.css.map": "/2019-2-Atom-Frontend-E-Grigoryan/static/css/main.d2f02564.chunk.css.map",
+    "static/media/Profile.module.css": "/2019-2-Atom-Frontend-E-Grigoryan/static/media/boss.75c0ae13.svg",
+    "static/media/HeaderChat.module.css": "/2019-2-Atom-Frontend-E-Grigoryan/static/media/search1.2086744a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eeeec341.js",
+    "static/js/2.5deaa54e.chunk.js",
+    "static/css/main.d2f02564.chunk.css",
+    "static/js/main.54e1b436.chunk.js"
+  ]
+}
